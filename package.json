@@ -1,6 +1,10 @@
 {
   "name": "staircraft",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.9.4",
+    "npm": "5.6.0"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
