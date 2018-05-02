@@ -1,10 +1,12 @@
 .home { 
     background:#fff ;
-    font-family: HelveticaNeueRegular,Helvetica,Helvetica,Arial,sans-serif;
+    font-family: Arial,sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: Arial,sans-serif;
 }
 .home .header--nav-strip {
-    font-family: HelveticaNeueRegular,Helvetica,Helvetica,Arial,sans-serif;
-    letter-spacing: 1px
+    font-family: Arial,sans-serif;
 }
 .home .header--nav-strip ul li a { 
     font-size: 18px
@@ -23,13 +25,12 @@ home .footer svg:not(:root).svg-inline--fa {
     width: .875em
 }
 #breadcrumbs {
-    letter-spacing: 1px;
     font-size: 1rem;
 }
 .breadcrumbs-strip .content--left-half p {
     color: #000;
     letter-spacing: 1px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding-bottom: 1rem;
 }
 .breadcrumbs-strip .content--left-half iframe {
@@ -39,8 +40,10 @@ home .footer svg:not(:root).svg-inline--fa {
     margin: 1rem 0;
 }
 .content-iframe .text {
+    color: #0082b4;
     font-size: 1.75rem;
     font-weight: 700;
+    margin-top: 3rem;
 }
 .content-iframe iframe {
     display: none;
@@ -48,19 +51,36 @@ home .footer svg:not(:root).svg-inline--fa {
     height: 650px;
 }
 .list-metsec-view {
-    margin: 1rem 0;
+    margin: 4rem 0 1rem;
 }
-.list-metsec-view li {
+.list-metsec-view img {
+    width: 100%;
+    object-fit: cover;
+}
+.list-metsec-view h3 a {
+    color: #0082b4;
+}
+.list-metsec-view .links {
     display: inline-block;
-}
-.list-metsec-view li a {
-    border-right: 1px solid #000;
-    display: block;
-    font-size: 1.1rem;
+    padding: 5px 44px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #0082b4;
+    font-size: 16px;
+    text-align: center;
     line-height: 1;
-    margin-bottom: 1.2rem;
-    padding: 0 .75rem;
+    letter-spacing: 1px;
+    vertical-align: middle;
+    text-decoration: none;
+    overflow: hidden;
+    transition: background-color .25s,color .25s,border-color .25s;
 }
-.list-metsec-view li:last-child a {
-    border-right: 0;
+.list-metsec-view .links:hover {
+    background-color: #ddd;
+    color: #0082b4;
+    cursor: pointer;
+    text-decoration: none;
 }
