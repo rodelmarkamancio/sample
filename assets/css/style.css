@@ -41,16 +41,16 @@
 
 .home { 
     background:#fff ;
-    font-family: 'Voestalpine-Light', sans-serif;
+    font-family: 'Voestalpine-Light', Arial, sans-serif;
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Voestalpine-Light', sans-serif;
+    font-family: 'Voestalpine-Light', Arial, sans-serif;
 }
 .home .header--nav-strip {
-    font-family: 'Voestalpine-Light', sans-serif;
+    font-family: 'Voestalpine-Light', Arial, sans-serif;
 }
 .home .header--nav-strip ul li a { 
-    font-size: 18px
+    font-size: 16px
 }
 .home .footer .svg-inline--fa { 
     display: inline-block;
@@ -66,16 +66,34 @@ home .footer svg:not(:root).svg-inline--fa {
     width: .875em
 }
 #breadcrumbs {
-    font-size: 1rem;
+    font-size: 0.875rem;
+}
+.wrapper .main-menu li.main-menu__item--active .main-menu__link {
+    color: #fff;
+}
+.header--right-half .right-half--menu {
+    margin: 3px 0 0;
 }
 .breadcrumbs-strip .content--left-half p {
     color: #000;
-    letter-spacing: 1px;
     font-size: 1rem;
     padding-bottom: 1rem;
 }
 .breadcrumbs-strip .content--left-half iframe {
     margin: 1rem 0;
+}
+.content--left-half .main--page-banner {
+    margin-top: 11px;
+}
+.content--right-half .generic-contact-details {
+    margin-top: 11px;
+}
+.content--right-half .generic-contact-details .h3-medium {
+    font-family: 'Voestalpine-Medium', Arial, sans-serif;
+    font-weight: 500;
+}
+.content--right-half .generic-contact-details .staff__phone {
+    font-size: 1rem;
 }
 .content-iframe {
     margin: 1rem 0;
