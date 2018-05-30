@@ -1,6 +1,10 @@
 .content- {
     &-details-index {
-
+        .search-title {
+            span {
+                text-transform: capitalize;
+            }
+        }
     }
     &-details-view {
         .content-list-view {

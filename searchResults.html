@@ -619,6 +619,13 @@
             $(displayContent).parent().hide();
             iframe.attr('src', contentLink);
             displayDescription.html(contentDescription);
+
+            //
+            // search name
+            var searchKey = window.location.search.split('=')[1].replace(/%20/g, ' ');
+
+            $('.search-title span').html(searchKey);
+            console.log(searchKey);
         });
     </script>
     </body>
