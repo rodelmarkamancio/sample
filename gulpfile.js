@@ -22,10 +22,7 @@ var resources = {
             'node_modules/bootstrap/dist/js/bootstrap.min.js'
         ],
         "css": {
-            "src": "assets/sass/app.scss",
-            "includes": [
-                "node_modules/bootstrap/dist/css/bootstrap.min.css"
-            ]
+            "src": "assets/scss/app.scss"
         },
         "images": [
             "assets/images/*.*",
@@ -39,7 +36,7 @@ var resources = {
 
 var paths = {
     "app": "assets/",
-    "sassPath": "assets/sass/"
+    "sassPath": "assets/scss/"
 };
 
 //
@@ -83,10 +80,10 @@ gulp.task('build:css', false, function() {
     return gulp.src(resources.frontend.css.src)
         .pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
         .pipe(sourcemaps.init())
-        .pipe(sass({ includePaths: resources.frontend.css.includes }))
+        // .pipe(sass({ includePaths: resources.frontend.css.includes }))
         .pipe(minify())
         .pipe(autoprefixer())
-        .pipe(concat('app.css'))
+        .pipe(concat('metsec.css'))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(path.join(paths.app, 'css')))
         .pipe(notify({ message: 'App stylesheets successfully builded!', onLast: true }));
@@ -109,14 +106,14 @@ gulp.task('css', function() {
         .pipe(sass({
                 style: 'compressed',
                 loadPath: [
-                    './assets/sass',
+                    './assets/scss',
                 ]
             })
             .on("error", notify.onError(function(error) {
                 return "Error: " + error.message;
             })))
         .pipe(minify())
-        .pipe(concat('app.css'))
+        .pipe(concat('metsec.css'))
         .pipe(gulp.dest(path.join(paths.app, 'css')));
 });
 

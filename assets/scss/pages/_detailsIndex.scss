@@ -1,0 +1,26 @@
+.content- {
+    &-details-index {
+
+    }
+    &-details-view {
+        .content-list-view {
+            ul {
+                list-style: none;
+                margin-left: .25rem;
+                li {
+                    margin-left: 1rem;
+                    label {
+                        display: inline;
+                    }
+                    a {
+                        font-size: 1rem;
+                        margin-left: 2rem;
+                        &.first {
+                            margin-left: .25rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
