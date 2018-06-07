@@ -5,30 +5,50 @@
         }
     }
     &-details-view {
+        list-style: none;
+        margin: 1rem 0 0;
+        .col-md-4 {
+            padding: 0;
+            &.active {
+                .content-product-view {
+                    background: #f5f5f5;
+                    padding-bottom: 1rem;
+                }
+            }
+        }
         .content-product {
             &-view {
+                cursor: pointer;
+                margin-right: 2.5px;
                 iframe {
                     width: 100%;
                     height: 450px;
                 }
-            }
-            &-detail {
-                margin-top: 2rem;
-                p {
-                    
+                h3 {
+                    margin-bottom: 0;
+                    padding: 0 1rem;
+                    position: relative;
+                    span {
+                        position: absolute;
+                        right: 10px;
+                    }
                 }
             }
         }
     }
+    &full-details {
+        background: #f5f5f5;
+        margin: 0 0 1rem;
+        padding: 1rem 0;
+        h4 {
+            font-weight: 700;
+        }
+    }
     &-wrapper {
         position: relative;
-        height: 500px;
-        overflow: hidden;
     }
     &-details-list {
-        height: 500px;
         margin-top: 2rem;
-        overflow: auto;
         position: relative;
         width: 100%;
         .content-product {
@@ -116,4 +136,43 @@
             }
         }
     }
+}
+
+
+.dialog.dialog--open .dialog__content,
+.dialog.dialog--close .dialog__content {
+	-webkit-animation-duration: 0.3s;
+	animation-duration: 0.3s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+
+.dialog.dialog--open .dialog__content {
+	-webkit-animation-name: anim-open;
+	animation-name: anim-open;
+}
+
+.dialog.dialog--close .dialog__content {
+	-webkit-animation-name: anim-close;
+	animation-name: anim-close;
+}
+
+@-webkit-keyframes anim-open {
+	0% { opacity: 0; -webkit-transform: scale3d(1.1, 1.1, 1); }
+	100% { opacity: 1; -webkit-transform: scale3d(1, 1, 1); }
+}
+
+@keyframes anim-open {
+	0% { opacity: 0; -webkit-transform: scale3d(1.1, 1.1, 1); transform: scale3d(1.1, 1.1, 1); }
+	100% { opacity: 1; -webkit-transform: scale3d(1, 1, 1); transform: scale3d(1, 1, 1); }
+}
+
+@-webkit-keyframes anim-close {
+	0% { opacity: 1; }
+	100% { opacity: 0; -webkit-transform: scale3d(0.9, 0.9, 1); }
+}
+
+@keyframes anim-close {
+	0% { opacity: 1; }
+	100% { opacity: 0; -webkit-transform: scale3d(0.9, 0.9, 1); transform: scale3d(0.9, 0.9, 1); }
 }
