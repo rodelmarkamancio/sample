@@ -16,8 +16,8 @@ $(function() {
             _mainParent.find('.active').find('span > i').removeClass('fa fa-angle-up').addClass('fa fa-angle-down');
             _mainParent.find('.active').removeClass('active');
             _this.addClass('active');
+            $(this).toggleClass('show');
             _mainParent.find('.active').find('span > i').removeClass('fa fa-angle-down').addClass('fa fa-angle-up');
-            // get list of architectural details data
 
             if (_info == "architectural-details") {
                 _link = "assets/data/architecturalDetails.json";
@@ -27,21 +27,26 @@ $(function() {
                 _link = "assets/data/metframeAnimationDetails.json";
             }
 
+            _parent.after('<div class="row content-full-details"></div>');
+            $('.content-full-details').hide();
+
+            if ($(this).hasClass('show')) {
+                $('.content-full-details').slideDown(500,'linear');
+                _this.addClass('active');
+                _mainParent.find('.active').find('span > i').removeClass('fa fa-angle-down').addClass('fa fa-angle-up');
+            } else {
+                $('.content-full-details').slideUp(500);
+                _mainParent.find('.content-full-details').remove();
+                _mainParent.find('.active').find('span > i').removeClass('fa fa-angle-up').addClass('fa fa-angle-down');
+                _mainParent.find('.active').removeClass('active');
+            }
+
             $.get(_link, 
                 function(data) {
                     var data = data.data;
                     // get each data
                     $.each(data, function(key, value) {
                         if (_index == value.id) {
-                            
-                            _parent.after('<div class="row content-full-details"></div>');
-
-                            $('.content-full-details').hide();
-                            if (_this.hasClass('active')) {
-                                $('.content-full-details').slideDown(500,'linear')
-                            } else {
-                                $('.content-full-details').slideUp(500,'linear')
-                            }
 
                             $.each(value.data, function(k, v) {
                                 _mainParent.find('.content-full-details').append(
@@ -59,6 +64,13 @@ $(function() {
                 });
 
             
+        });
+
+        $('.content-product-view span').on('click', function(e) {
+            var _parent = $(this).parents('.display-details');
+
+            $('.content-full-details').slideToggle(500, 'linear');
+            e.stopPropagation();
         });
 
         $(document).on('click', 'a[data-modal]', function(event) {
