@@ -52,12 +52,12 @@ $(function() {
                                 _mainParent.find('.content-full-details').append(
                                     '<div class="col-md-4 view-details">' +
                                         '<h4><a href="#ex' + k + '" data-modal>' + v.title + '</a></h4>' +
-                                        '<a href="#ex' + k + '" data-modal><img src="https://placeimg.com/640/480/arch" /></a>' +
-                                        '<div id="ex' + k + '" class="modal">' +
-                                            '<iframe src="' + v.link + '" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>' +
-                                        '</div>' +
+                                        // '<a href="#ex' + k + '" data-modal data-link="' + v.link + '"><img src="https://placeimg.com/640/480/arch" /></a>' +
+                                        '<a href="' + v.link + '"class="iframe"><img src="https://placeimg.com/640/480/arch" /></a>' +
+                                        // '<div id="ex' + k + '" class="modal modal-iframe"></div>' +
                                     '</div>'
                                 );
+                                $(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
                             });
                         }
                     });
@@ -73,9 +73,21 @@ $(function() {
             e.stopPropagation();
         });
 
-        $(document).on('click', 'a[data-modal]', function(event) {
-            $(this).modal();
-            console.log($(this).attr('href'))
-            return false;
-        });
+        $(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+
+        // $(document).on('click', 'a[data-modal]', function(event) {
+        //     var link = $(this).data('link');
+            
+        //     // $('#modal-view').remove();
+        //     if ($('body > .modal-iframe').length) {
+        //         if ($('.modal-iframe').css('display') == 'none') {
+        //             $('.modal-iframe').remove();
+        //         }
+        //     }
+        //     $(this).parent().find('.modal').html('<iframe id="modal-view" src="' + link + '" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>');
+            
+        //     $(this).modal();
+
+        //     return false;
+        // });
 });
